@@ -1,0 +1,30 @@
+
+<html>
+    <head>
+        
+    </head>
+    <body>
+        
+        <table id="student" cellpadding="2" cellspacing="2" border="1" width="400px">  
+            <tr>  
+                <td style="background-color: gray; color: white">currentlangtext</td>  
+                <td style="background-color: gray; color: white">targetlangtext</td>                  
+            </tr>  
+        </table>  
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>  
+    <script type="text/javascript">    
+        var uri = 'api/Translate';  
+        $(document).ready(function () {  
+            $.getJSON(uri)  
+            .done(function (data) {  
+                $.each(data, function (key, item) {  
+                    $('#student').append("<tr><td>" + item.currentlangtext + "</td>" + "<td>" + item.targetlangtext +  "</td></tr>");  
+                });  
+            });  
+        });  
+  
+        
+    </script>  
+    </body>
+</html>
